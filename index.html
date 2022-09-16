@@ -1,33 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">   
-    <title>todo list</title>
-</head>
-<body class="bg-info">
-   <div class="container p-5">
-    <div class="row text-center">
-        <h1>TODO List</h1>
-    </div>   
-    <div class="row justify-content-center text-center">
-        <div class="col-md-12 col-lg-10 mt-2">         
-            <input type="text" class="form-control" id="text-ınput" placeholder="I wil make a sandwich">                 
-            </div>             
-            <div class="col-sm-12 col-lg-2 mb-1 mt-2">
-                <button type="submit" class="btn btn-primary w-100">ADD</button> 
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+            crossorigin="anonymous"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+            integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link rel="stylesheet" href="style.css" />
+        <title>todo list</title>
+    </head>
+    <body class="bg-info">
+        <div class="container p-5">
+            <div class="row text-center">
+                <h1>TODO List</h1>
             </div>
-    </div>  
-    <hr> 
-    <div class="row justify-content-center" id="task-container"></div> 
-   </div>
-  <div class="todo-list"></div>
-
-
-<script src="javascript.js"></script>    
-</body>
+            <div class="row justify-content-center text-center">
+                <div class="col-md-12 col-lg-10 mt-2">
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="text-input"
+                        placeholder="I wil make a sandwich"
+                    />
+                </div>
+                <div class="col-sm-12 col-lg-2 mb-1 mt-2">
+                    <button type="submit" class="btn btn-success w-100" id="addBtn">ADD</button>
+                </div>
+            </div>
+            <hr />
+            <div class="todo-list row justify-content-center" id="todo-id">
+                <div
+                    class="bg-danger rounded text-light d-flex flex-row justify-content-between align-items-center task"
+                >
+                    <span><i class="fa-regular fa-circle"></i> &nbsp;</span>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, voluptates.
+                    <button class="btn-close btn-close-white task-close"></button>
+                </div>
+                <div
+                    class="col-sm-12 col-md-12 col-lg-12 bg-danger text-light rounded d-flex flex-row justify-content-between align-items-center task mt-1"
+                    id="task-${taskNo}"
+                >
+                    <div class="task-text">
+                        <span
+                            ><i class="fa-regular fa-circle" id="task-not-checked-${taskNo}"></i>
+                            &nbsp;</span
+                        >${task}
+                    </div>
+                    <button
+                        class="btn-close btn-close-white task-close"
+                        id="task-close${taskNo}"
+                    ></button>
+                </div>
+            </div>
+        </div>
+​
+        <script src="javascript.js"></script>
+    </body>
 </html>
